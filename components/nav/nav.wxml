@@ -1,0 +1,6 @@
+<!--components/nav/nav.wxml-->
+<view class="nav-container">
+    <image catch:tap="onLeft" class="icon" src="{{first?disLeftSrc:leftSrc}}" />
+    <text class="title">{{title}}</text>
+    <image catch:tap="onRight" class="icon" src="{{latest?disRightSrc:rightSrc}}" />
+</view>

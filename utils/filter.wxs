@@ -1,0 +1,14 @@
+// 服务器返回 \n  text 解析为 换行
+//服务器返回 \\n  text 解析为 \n
+// 语法形式跟es5相似，但是是不同的语法
+var format=function(text){
+    if(!text){
+        return
+    }
+    var reg=getRegExp('\\\\n','g');
+    return text.replace(reg,'\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;')
+}
+
+module.exports={
+    format:format
+}

@@ -1,0 +1,68 @@
+<!--pages/book-detail/book-detail.wxml-->
+<wxs src="../../utils/filter.wxs" module="utils"></wxs>
+<view class="container">
+    <view class="head">
+        <image class="img" src="{{itemObj.image}}"></image>
+        <text class="title">{{itemObj.title}}</text>
+        <text class="author">{{itemObj.author}}</text>
+    </view>
+    <view class="sub-container">
+        <text class="headline">短评</text>
+        <view class="comment-container">
+            <block wx:for="{{comments}}" wx:key="index" wx:if="{{index<10}}">
+                <v-tag textContent="{{item.content}}" class="{{index==0?'ex-tag1':'' || index==1?'ex-tag2':''}}">
+                    <text class="num" slot="after">+{{item.nums}}</text>
+                </v-tag>
+            </block>
+        </view>
+    </view>
+    <view class="sub-container">
+        <text class="headline">内容简介</text>
+        <text class="content" decode="{{true}}">{{utils.format(book.summary)}}</text> 
+        <!--decode 解析 &nbsp;  -->
+    </view>
+    <view class="sub-container">
+        <text class="headline">书本信息</text>
+        <view class="detail-container">
+            <view class="vertical description">
+                <text>出版社</text>
+                <text>出版年</text>
+                <text>页数</text>
+                <text>定价</text>
+                <text>装帧</text>
+            </view>
+            <view class="vertical">
+                <text>{{book.publisher}}</text>
+                <text>{{book.pubdate}}</text>
+                <text>{{book.pages}}</text>
+                <text>{{book.price}}</text>
+                <text>{{book.binding}}</text>
+            </view>
+        </view>
+    </view>
+</view>
+
+<view class="post-container" wx:if="{{!posting}}">
+    <view class="post-fake" bind:tap="onFakePost">
+        <text>输入短评</text>
+    </view>
+    <view class="like-container">
+        <v-like bind:like="onLike" class="like" like="{{likeStatus}}" count="{{likeCount}}"></v-like>
+    </view>
+</view>
+<view class="masking" wx:if="{{posting}}"></view>
+<view class="posting-container" wx:if="{{posting}}">
+    <view class="post-header">
+        <text wx:if="{{comments.length}}">仅可点击标签+1</text>
+        <text wx:else>暂无标签</text>
+        <text bind:tap="onCancel" class="cancel">取消</text>
+    </view>
+    <view class="comment-container">
+        <block wx:for="{{comments}}" wx:key="index" wx:if="{{index<3}}">
+            <v-tag data-text="{{item.content}}" bind:tap="onTap" textContent="{{item.content}}" class="{{index==0?'ex-tag1':'' || index==1?'ex-tag2':''}}">
+                <text class="num" slot="after">+{{item.nums}}</text>
+            </v-tag>
+        </block>
+    </view>
+    <input class="post" type="text" placeholder="短评最多12个字" maxlength="12" bindconfirm="onTap" />
+</view>

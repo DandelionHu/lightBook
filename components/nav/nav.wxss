@@ -1,0 +1,17 @@
+/* components/nav/nav.wxss */
+.nav-container{
+    width: 600rpx;
+    height: 80rpx;
+    background: #f7f7f7;
+    border-radius: 2rpx;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-container .icon{
+    width: 80rpx;
+    height: 80rpx;
+}
+.nav-container .title{
+    font-size: 28rpx;
+}

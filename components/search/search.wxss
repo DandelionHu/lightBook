@@ -1,0 +1,143 @@
+/* components/search/search.wxss */
+.search-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  .header {
+    background-color: #ffffff;
+    position:fixed;
+    height: 100rpx;
+    border-top: 1rpx solid #f5f5f5;
+    border-bottom: 1rpx solid #f5f5f5;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    z-index:99;
+  }
+  .search-header {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #f5f5f5;
+    border-radius: 50rpx;
+    margin-left: 20rpx;
+    width: 630rpx
+  }
+  .search-header .cancel-img {
+    width: 24rpx;
+    height: 24rpx;
+    margin: 0rpx 20rpx;
+  }
+  .search-header .icon {
+    width: 28rpx;
+    height: 28rpx;
+    margin: 0rpx 20rpx;
+  }
+  .search-header .bar {
+    border-top-right-radius: 15rpx;
+    border-bottom-right-radius: 15rpx;
+    display: inline-block;
+    height: 60rpx;
+    flex: 1;
+    font-size: 28rpx;
+  }
+  .search-header .in-bar {
+    color: #999;
+  }
+  .header .cancel {
+    line-height: 34rpx;
+    width: 100rpx;
+    text-align: center;
+    display: inline-block;
+    border: none;
+  }
+
+.history {
+    width: 100%;
+    display: flex;
+    font-size: 28rpx;
+    margin-top:160rpx;
+    margin-bottom: 20rpx;
+    flex-direction: column;
+    padding: 0rpx 40rpx;
+    box-sizing: border-box;
+  }
+  .history .title {
+    line-height: 30rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .history .chunk {
+    height: 30rpx;
+    width: 8rpx;
+    background-color: #000;
+    display: inline-block;
+    margin-right: 10rpx;
+  }
+  .hot-search{
+    margin-top:70rpx;
+  }
+  .tags {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 24rpx;
+    padding-left: 15px;
+    width: 630rpx;
+  }
+  .tags v-tag {
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+  .books-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0 90rpx 0 90rpx;
+    justify-content: space-between;
+    margin-bottom: 10rpx;
+  }
+  .noData{
+      line-height: 80rpx;
+      text-align: center;
+      width: 100%;
+      color: #999;
+  }
+
+  .loading {
+    margin-top: 10rpx;
+    height: 70rpx;
+    display: block;
+  }
+  
+  .loading-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+  
+  .empty-tip {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    color: #999;
+  }
+  .noData{
+    color: #999;
+    line-height: 80rpx;
+    display: block;
+    text-align: center;
+  }
+  .scroll-container{
+    width: 100%;
+    padding-top: 110rpx;
+    height: 100%;
+    box-sizing: border-box
+  }

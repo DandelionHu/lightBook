@@ -1,0 +1,22 @@
+.classic-contaniner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.classic-img{
+    width: 750rpx;
+    height: 500rpx;
+}
+.tag{
+    width: 46rpx;
+    height: 142rpx;
+    position: relative;
+    right:310rpx;
+    bottom: 58rpx;
+}
+.content{
+    font-size: 32rpx;
+    max-width: 550rpx;
+    line-height: 46rpx;
+    color: #555
+}

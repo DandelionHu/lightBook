@@ -1,0 +1,9 @@
+<!--components/book/book.wxml-->
+<view class="book-container">
+    <image src="{{bookObject.image}}" alt=""/>
+    <view class="description">
+        <text class="title">{{bookObject.title}}</text>
+        <text class="author">{{bookObject.author}}</text>
+        <view class="foot">{{bookObject.fav_nums}}  喜欢</view>
+    </view>
+</view>
